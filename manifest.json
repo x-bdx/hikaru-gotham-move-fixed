@@ -5,9 +5,7 @@
     "content_scripts": [
         {
             "matches": [
-                "*://*.chess.com/live*",
-                "*://*.chess.com/game/live*",
-                "*://*.chess.com/play/online*",
+                "*://*.chess.com/*",
                 "*://*.lichess.org/*"
             ],
             "js": [
@@ -35,10 +33,5 @@
                 "*://*/*"
             ]
         }
-    ],
-    "browser_specific_settings": {
-        "gecko": {
-            "id": "firefox@jackli.gg"
-        }
-    }
+    ]
 }
