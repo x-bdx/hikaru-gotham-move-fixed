@@ -1,34 +1,34 @@
-# Hikaru and GothamChess Tell You to MOVE
-Hikaru and GothamChess remind you when you have spent too much time thinking on a move!
+# Hikaru and GothamChess Tell You to MOVE (Fixed and Updated)
 
-This is a web extension compatible with Chrome, Firefox, and Edge. It is designed to work for games on both chess.com and lichess.org.
+A browser extension for Chrome, Brave, and other Chromium browsers that plays voice clips from Hikaru Nakamura and GothamChess (Levy Rozman) whenever you spend too much time thinking on a chess move[cite: 3, 5]. Works on Chess.com and Lichess[cite: 3].
 
-## Installation Steps
+## What is Fixed
 
-1. Either clone or download this repository onto your local computer
-    - Clone: `git clone https://github.com/shuhaoli/hikaru-gotham-move.git`
-    - or Download: Navigate to https://github.com/shuhaoli/hikaru-gotham-move, click Code > Download ZIP, and unzip the file on your computer
+The original extension stopped working due to front-end updates on Chess.com. This fork addresses those issues:
 
-### Google Chrome
+* Modern Clock Selectors: Updated the DOM target queries to detect the current Chess.com clock elements and layout containers.
+* Turn Detection: Improved the mutation observer logic so the extension reliably knows when your turn starts and ends.
+* Broader URL Matching: Expanded `manifest.json` rules so the script injects into modern `/game/*` URLs rather than just legacy `/live` paths.
+* Manifest V3 Compatibility: Ensured clean execution for modern Chromium browser standards.
 
-1. Rename the `manifest-chrome.json` file to `manifest.json`
+## Features
 
-2. Open Google Chrome, and navigate to `chrome://extensions/`
+* Choose between Hikaru, GothamChess, or a standard sound effect[cite: 5].
+* Set notification triggers based on absolute seconds or percentage of remaining time[cite: 5].
+* Optional repeated reminders at custom intervals until you make a move[cite: 5].
+* Compatible with Chess.com and Lichess[cite: 3].
 
-3. Turn on Developer Mode on the top right
+## How to Install
 
-4. Click "Load Unpacked", and select the hikaru-gotham-move folder you cloned or downloaded
+1. Clone or download this repository to your computer:
+   git clone https://github.com/x-bdx/hikaru-gotham-move-fixed.git
+2. Open your browser extensions page (`chrome://extensions` or `brave://extensions`).
+3. Turn on Developer mode in the top right corner.
+4. Click Load unpacked and select this project folder.
+5. Go to Chess.com or Lichess, open the extension popup from your toolbar, and configure your preferred reminder settings[cite: 5].
 
-5. No longer run out of time in your chess games :)
+## Credits and License
 
-### Mozilla Firefox
+This is an updated fork of the original extension created by Jack Li (https://github.com/shuhaoli/hikaru-gotham-move).
 
-1. Rename the `manifest-firefox.json` file to `manifest.json`
-
-2. Open Mozilla Firefox, and navigate to `about:debugging`
-
-3. Click on "This Firefox"
-
-4. Click "Load Temporary Add-on", and select any file within the hikaru-gotham-move folder you cloned or downloaded
-
-5. No longer run out of time in your chess games :)
+Licensed under the GNU General Public License v3.0[cite: 2].
